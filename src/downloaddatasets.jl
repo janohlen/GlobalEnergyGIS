@@ -107,7 +107,7 @@ function unpack_and_cleanup(shortname, filename, datafolder, dataset_info)
     if shortname == "WDPA"
         renameWDPAfiles(joinpath(datafolder, "WDPA"))
         for i = 0:2
-            foldername = "WDPA-shapefile_$i"
+            foldername = "WDPA_Oct2021_Public_shp_$i"
             println("\nUnpacking archive: $foldername.zip")
             unpack(joinpath(datafolder, "WDPA", "$foldername.zip"),
                     joinpath(datafolder, "WDPA", foldername), ".zip")
