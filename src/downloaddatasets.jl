@@ -51,7 +51,7 @@ function get_dataset_info()
 end
 download_datasets(startfrom::Int) = download_datasets(get_dataset_info()[startfrom:end, 1]...)
 
-url_WDPA(monthyear=Dates.format(now(), "uyyyy")) = "https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_WDOECM_$(monthyear)_Public_shp.zip"
+url_WDPA(monthyear=Dates.format(now(), "uyyyy")) = "https://d1gam3xoknrgr2.cloudfront.net/current/WDPA_$(monthyear)_Public_shp.zip"
 
 function download_datasets(shortnames::String...)
     datafolder = getconfig("datafolder")
