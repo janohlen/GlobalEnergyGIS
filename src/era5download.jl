@@ -38,7 +38,7 @@ end
 function download_and_convert_era5(year=2018; start_month = 1, datasets=["wind", "solar", "temp"])
     for dataset in datasets
         println("\nDownloading ERA5 $dataset data from Copernicus...")
-        era5download(year; month, datasets=[dataset])
+        era5download(year; start_month, datasets=[dataset])
         println("\nConverting downloaded $dataset data to HDF5 and recompressing...")
         if dataset == "solar"
             makesolarera5(; year)
