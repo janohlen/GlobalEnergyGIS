@@ -35,7 +35,7 @@ function cds_id(uid::Int, api_key::AbstractString)
     end
 end
 
-function download_and_convert_era5(year=2018; datasets=["wind", "solar", "temp"])
+function download_and_convert_era5(year=2018; month = 1; datasets=["wind", "solar", "temp"])
     for dataset in datasets
         println("\nDownloading ERA5 $dataset data from Copernicus...")
         era5download(year; datasets=[dataset])
