@@ -53,10 +53,10 @@ function download_and_convert_era5(year=2018; datasets=["wind", "solar", "temp"]
     println("\nERA5 datasets $datasets downloaded and converted. Temporary files cleaned up.")
 end
 
-function era5download(year=2018; datasets=["wind", "solar", "temp"])
+function era5download(year=2018; month = 1; datasets=["wind", "solar", "temp"])
     mkpath(in_datafolder("downloads"))
     count = 0
-    for dataset in datasets, month = 1:12, monthhalf = 1:2
+    for dataset in datasets, monthhalf = 1:2
         if dataset == "wind"
             vars = ["100m_u_component_of_wind", "100m_v_component_of_wind"]
         elseif dataset == "solar"
